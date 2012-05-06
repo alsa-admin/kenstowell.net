@@ -81,12 +81,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	 */
 	protected function _initDoctype()
 	{
-		//$this->_logger->info('Bootstrap ' . __METHOD__);
+		$this->_logger->info('Bootstrap ' . __METHOD__);
 
 		//init the view
 		$this->bootstrap('view');
 		$view = $this->getResource('view');
-		$view->doctype('XHTML1_STRICT');
+		$view->doctype('XHTML5');
 
 		//Set title and separator
 		$view->headTitle('Ken Stowell - Visual Developer')
@@ -100,5 +100,4 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$view->headScript()->prependFile('/scripts/jquery-1.7.1/jquery-1.7.1.js')
 			->headScript()->appendFile('/scripts/jquery-ui-1.8.17/ui/minified/jquery-ui.min.js');
 	}
-
 }
