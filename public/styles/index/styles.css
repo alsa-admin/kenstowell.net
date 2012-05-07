@@ -26,6 +26,7 @@ body {
 div#page-wrapper {
     overflow: hidden;
 }
+
 /**
  * INTRO CONTENT
  */
@@ -109,7 +110,7 @@ section#about-wrapper section#about-content header {
 }
 
 section#about-wrapper section#about-content article {
-     margin:18% auto;
+     margin:12% auto;
      font-size:20px;
 }
 

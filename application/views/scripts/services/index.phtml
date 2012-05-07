@@ -1,4 +1,49 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Services</b> and script/action name <b>index</b></p>
-</div>
+<?php $this->headLink()->appendStylesheet('/styles/services/styles.css'); ?>
+<?php $this->headScript()->appendFile('/scripts/services/scripts.js'); ?>
+<section id="services-wrapper" class="container">
+	<img src="../../images/services/services_bg.png" alt="bg" id="services_bg" />
+	<header id="services-header">
+		<div id="logo">
+			<img src="../../images/general/logo.png" alt="ken stowell: visual developer" />
+		</div>
+		<nav id="services-nav" class="row">
+			<a href="/about">about</a>
+			<a href="/services" class="current-services">services</a>
+			<a href="/work">work</a>
+			<a href="/contact">contact</a>
+		</nav>
+	</header>
+	<section id="services-content" class="row">
+		<header class="twocol">What I do:</header>
+		<article>
+			<ul id="services-list" class="row">
+				<li id="development" class="service-item fourcol">
+						<span class="dev-title">Development</span>
+						I pride myself in offering exceptional
+						web programming. I’m Passionate
+						towards object oreinted architecture
+						and implementing intelligent design
+						patterns.
+				</li>
+				<li id="design" class="service-item fourcol">
+						<span class="design-title">Design</span>
+						Writing intelligent code is one thing,
+						but designing how that code
+						meets the user is the real reason I
+						am obsessed with the web.
+				</li>
+				<li id="consulting" class="service-item fourcol last">
+						<span class="consulting-title">Consulting</span>
+						Have all the resources and just
+						need a plan? I can provide your
+						team with technical insights
+						that will bring your application
+						speed and stability.
+				</li>
+			</ul>
+		</article>
+	</section>
+	<footer id="services-footer">
+
+	</footer>
+</section>
