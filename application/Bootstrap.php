@@ -98,6 +98,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 		//Load Scripts
 		$view->headScript()->prependFile('/scripts/jquery-1.7.1/jquery-1.7.1.js')
-			->headScript()->appendFile('/scripts/jquery-ui-1.8.17/ui/minified/jquery-ui.min.js');
+			->headScript()->appendFile('/scripts/jquery-ui-1.8.17/ui/minified/jquery-ui.min.js')
+			->headScript()->appendFile('/scripts/utils.js');
 	}
 }

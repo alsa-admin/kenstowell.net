@@ -11,6 +11,7 @@
  *********************************************************************************************************************************************************/
 body {
     background: url('../../images/index/intro_bg.gif') repeat #eeefe9;
+    overflow: hidden;
 }
 /**********************************************************************************************************************************************************
  * HEADER/NAVIGATION        																																																															*
@@ -19,6 +20,15 @@ body {
 /**********************************************************************************************************************************************************
  * CONTENT       																																																															            *
  *********************************************************************************************************************************************************/
+/**
+ * PAGE WRAPPER
+ */
+div#page-wrapper {
+    overflow: hidden;
+}
+/**
+ * INTRO CONTENT
+ */
 ul#intro-content {
     color: white;
     font-family: franchiseregular;
@@ -46,16 +56,89 @@ li#intro-line-three {
 li#intro-line-four{
     margin: 16% 0 0 55%;
 }
+
+/**
+ * INTRO LOWER CONTENT
+ */
+section#about-wrapper {
+    margin: -5px 0 0 0;
+    padding: 0;
+    background-color: white;
+}
+
+section#about-wrapper header#about-header {
+    height: 54px;
+    background-color: #5B544B;
+}
+section#about-wrapper header#about-header div#logo {
+    padding:4px 5px;
+    float:left;
+}
+
+section#about-wrapper header#about-header nav#about-nav {
+    color: white;
+    font-family:sofiaprolight;
+    text-align: right;
+    padding: 31px 0 0 0;
+}
+
+section#about-wrapper header#about-header nav#about-nav a {
+    display: inline-block;
+    font-size: 20px;
+}
+
+section#about-wrapper header#about-header nav#about-nav a:first-child {
+    padding: 0 55px 0 0;
+}
+
+section#about-wrapper header#about-header nav#about-nav a:nth-child(2) {
+     padding: 0 55px 0 0;
+}
+
+section#about-wrapper header#about-header nav#about-nav a:nth-child(3) {
+    padding: 0 55px 0 0;
+}
+
+section#about-wrapper section#about-content {
+    color:#5B544B;
+    font-family: sofiaprolight;
+}
+
+section#about-wrapper section#about-content header {
+    margin: 10% auto;
+}
+
+section#about-wrapper section#about-content article {
+     margin:18% auto;
+     font-size:20px;
+}
+
+section#about-wrapper section#about-content article p {
+    margin:2% auto;
+}
+
+section#about-wrapper section#about-content article ul{
+    margin:3% 10%;
+}
+
+section#about-wrapper section#about-content article ul li{
+    display: block;
+    list-style-type: none;
+    margin: 1% auto;
+}
 /**********************************************************************************************************************************************************
  * FOOTER      																																																															            *
  *********************************************************************************************************************************************************/
-footer#intro-footer {
-    position: fixed;
-    bottom: 0;
-    left:0;
-    height: 57px;
+div#intro-content-lower {
+    position:absolute;
     width: 100%;
-    background: url('../../images/index/intro_bottom.png') no-repeat 0 0;
+    margin: 0;
+    padding: 0;
+}
+
+section#about-wrapper footer#about-footer {
+    height:15px;
+    background-color: #48555B;
 }
 /**********************************************************************************************************************************************************
  *     																																																															            *
