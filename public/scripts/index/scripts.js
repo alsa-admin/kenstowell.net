@@ -63,10 +63,7 @@ Index.prototype = {
       //Trigger for the footer elevation
         $('div#page-wrapper').live('mousemove', function(e) {
             if(offY < 0) {
-                offY+=1.5;
-                console.log(offY);
-                console.log(e.pageX, e.offsetX);
-                console.log(e.pageY, e.offsetY);
+                offY+=(1.5);
                 self.elevateFooter(e, offY);
             }
         });

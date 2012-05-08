@@ -60,19 +60,50 @@ Services.prototype = {
      */
     bindEvents: function() {
         var self = this;
-
+        var timer;
         //service item event management
         $('.service-item').live('mouseenter', function(e) {
             var base = this;
-            $(this).css('cursor', 'pointer');
+            if($(this).is('.active') == false) {
+                $(this).css({
+                    'cursor'  : 'pointer',
+                    'width' :     '355px',
+                    'height': '195px'
+                });
+            }
+            if($('.active').length == 0) {
+                timer = setTimeout(function() {
+                    self.displayService(base)
+                }, 1500);
+            }
+          }
+        ).live('mouseleave', function(e) {
+            clearTimeout(timer);
+                if($(this).is('.active') == false) {
+                    $(this).css({
+                        'cursor'  : 'default',
+                        'width' :     '350px',
+                        'height': '190px'
+                    });
+                }
+          }
+        ).live('click', function(e) {
+                console.trace();
+          if($('.active').length == 0) {
+              self.displayService(this);
+          }
+         }
+        );
 
-            setTimeout(function() {
-                self.displayService(base)
-            }, 1500);
+        $('#page-wrapper, #blackout').live('click', function(e) {
+            if($('.active').length != 0 ) {
+                console.log(e.target)
+                if(($(e.target).is('.active, .active span, .active p, .active h4, .active div')) == false ) {
+                    self.hideService($('.active'));
+                }
+            }
+        })
 
-        }).live('click', function(e) {
-
-        });
     },
     /**
      * LOAD STYLES
@@ -93,6 +124,12 @@ Services.prototype = {
             'width' : w.w,
             'height': w.h
         });
+
+        //black out
+        $('#blackout').css({
+            'width' : w.w,
+            'height': w.h
+        });
     },
     /**
      * DISPLAY SERVICE
@@ -103,18 +140,108 @@ Services.prototype = {
 
         $('.service-item').each(function() {
             if($(this).is(elem)) {
+                if($(elem).is('#development')) {
+                    setTimeout( function() {
+                        $(elem).children(':not(span)').hide();
+                        $(elem).stop().animate({
+                            'width' : '1140px',
+                            'height': '504px'
+                        }, 1200, function() {
+                            $('#blackout').fadeIn(600);
+                            $(elem).addClass('active');
+                            $('#development-content').fadeIn(600);
+                        });
+                    }, 500);
+                }
 
+                if($(elem).is('#design')) {
+                    setTimeout( function() {
+                        $(elem).children(':not(span)').hide();
+                        $(elem).stop().animate({
+                            'left'  : '330px',
+                            'width' : '1140px',
+                            'height': '504px'
+                        }, 1000, function() {
+                            $('#blackout').fadeIn(600);
+                            $(elem).addClass('active');
+                            $('#design-content').fadeIn(600);
+                        });
+                    }, 500);
+                }
+
+                if($(elem).is('#consulting')) {
+                    setTimeout( function() {
+                        $(elem).children(':not(span)').hide();
+                        $(elem).stop().animate({
+                            'left'  : '360px',
+                            'width' : '1140px',
+                            'height': '504px'
+                        }, 1200, function() {
+                            $('#blackout').fadeIn(600);
+                            $(elem).addClass('active');
+                            $('#consulting-content').fadeIn(600);
+                        });
+                    }, 500);
+                }
             } else {
-                $(this).fadeOut(800);
+                $(this).fadeOut(400);
             }
         });
+    },
+    /**
+     * HIDE SERVICE
+     * @param elem
+     */
+    hideService: function(elem) {
+        var self = this;
+        var timer;
 
-        setTimeout( function() {
-            $(elem.childNodes[2]).remove();
-            $(elem).animate({
-                'width' : '1140px'
-            }, 1200);
-        }, 500)
+        $('.service-item').each(function(idx, itm) {
+            //clearTimeout(timer);
+            if($(itm).is('.active')) {
+                if($(itm).is('#development')) {
+                    $(itm).children('div').fadeOut(400);
+                    $(itm).animate({
+                        'width' : '350px',
+                        'height': '190px'
+                    }, 1200, function() {
+                        $('#blackout').fadeOut(600);
+                        $(itm).removeClass('active');
+                        $(itm).children(':not(div)').fadeIn(1200);
+                    });
+                }
+
+                if($(itm).is('#design')) {
+                    $(itm).children('div').fadeOut(400);
+                    $(itm).animate({
+                        'left'  : '740px',
+                        'width' : '350px',
+                        'height': '190px'
+                    }, 1000, function() {
+                        $('#blackout').fadeOut(600);
+                        $(itm).removeClass('active');
+                        $(itm).children(':not(div)').fadeIn(1200);
+                    });
+                }
+
+                if($(itm).is('#consulting')) {
+                    $(itm).children('div').fadeOut(400);
+                    $(itm).animate({
+                        'left'  : '1180px',
+                        'width' : '350px',
+                        'height': '190px'
+                    }, 1200, function() {
+                        $('#blackout').fadeOut(600);
+                        $(itm).removeClass('active');
+                        $(itm).children(':not(div)').fadeIn(1200);
+                    });
+                }
+            } else {
+                timer = setTimeout(function() {
+                    $(itm).show(400).children(':not(div)').show(400);
+                }, 1200);
+            }
+        });
     }
     
 }
