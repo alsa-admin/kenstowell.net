@@ -81,6 +81,8 @@ Work.prototype = {
         $('.work-item:not(#your-project), .work-item:not(#your-project) img').live('click', function(e) {
             if($(e.target).is('.work-item')) {
                 $('.work-details').load('work/'+$(e.target).attr('id'), function() {
+                    window.LB._search.init();
+                    prettyPrint();
                     $('.work-item').fadeOut(600, function() {
                         $('.work-details, #blackout').fadeIn(600);
                         $('.work-details').addClass('active');

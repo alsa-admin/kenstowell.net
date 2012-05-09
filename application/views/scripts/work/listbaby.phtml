@@ -1,0 +1,202 @@
+<?php $this->headLink()->appendStylesheet('/styles/work/listbaby.css'); ?>
+
+<header>
+	<h2>ListBaby</h2>
+	<img src="../../images/work/listbaby_logo.png" alt="ListBaby" class="work-details-image" />
+</header>
+
+<section class="status">
+	<header class="status-header">
+		<h3>Project Status: <span class="status-value">full-time development</span></h3>
+	</header>
+</section>
+
+<section class="description">
+	<header class="description-header">
+		<h3>Project Description</h3>
+	</header>
+	<article class="description-article">
+		<p>
+			ListBaby is a email marketing service for customers that also subscribe to HostBaby. It allows them to create email campaigns and design custom templates to
+		   	promote their website.
+		</p>
+		<p>
+			My involvement with this service isn't as mature as my experience with HostBaby's site builder, but I have a few things to show that I have been particularly
+			pleased with.
+		</p>
+	</article>
+</section>
+
+<section class="work-samples">
+	<header class="work-samples-header">
+		<h3>Work Samples</h3>
+	</header>
+	<article>
+		<p>
+			Currently, we've been redesigning the way a user can manage their contacts. I was tasked with developing a way for the user to conduct very granular searches
+			through their contact lists. The search had many criteria that could be amplified by adding as many as 35 'filter rows' as we called them. And the cake is:
+			their search criteria were saved so that if they needed to revise their search, they could revist the page and make small fixes rather than be forced to star from
+			scratch.
+		</p>
+		<img src="../../images/work/listbaby_adv_search.png" alt="Theme Filter" />
+		<p>The form boasts some pretty rich validation! Go ahead and give it a try!</p>
+
+		<div id="advanced_search_section">
+			<h2>Advanced Contact Search</h2>
+			<form id="advanced_search_form" class="lb_form" method="post">
+				<ul>
+					<li>Contacts need to match
+						<select name="and_or">
+							<option value="and">All</option>
+							<option value="or">Any</option>
+						</select> of these requirements:
+					</li>
+				</ul>
+				<ul class="advanced_search_filters">
+					<li>
+						<select name="field">
+							<option value="first_name" selected="selected">First Name</option>
+							<option value="last_name">Last Name</option>
+							<option value="email">Email</option>
+							<option value="street">Street Address</option>
+							<option value="city">City</option>
+							<option value="state">State</option>
+							<option value="zip_code">Zip Code</option>
+							<option value="phone">Phone Number</option>
+							<option value="country">Country</option>
+							<option value="tags">Tags</option>
+						</select> </li>
+					<li>
+						<select name="modal_verb">
+							<option value="must" selected="selected">Must</option>
+							<option value="not">Must Not</option>
+						</select> </li>
+					<li>
+						<select name="verb">
+							<option value="contain" selected="selected">Contain</option>
+							<option value="exactly">Be Exactly</option>
+							<option value="start">Start With</option>
+							<option value="end">End With</option>
+							<option value="list">Occur In List: </option>
+						</select> </li>
+					<li>
+						<input type="text" name="object" value="" class="search" /> </li>
+					<li><input type="checkbox" name="is_blank" value="is blank" class="is_blank" />is blank</li>
+				</ul>
+				<a href="#" class="add_filters advanced_search">add another search rule</a>
+				<input type="submit" value="search" class="advanced_search_submit disabled" />
+				<a href="#" class="clear_advanced_search">clear search</a>
+			</form>
+		</div>
+		<p>
+			Try hitting the search button or 'add another search rule' link at various stages and note how the form fields complete tedious user interaction automatically.
+			Once the search button is enabled, hit submit and then reload the Listbaby work sample section. Your search is still there!
+		</p>
+		<p></p>
+	</article>
+</section>
+<section class="work-samples">
+	<header class="work-samples-header">
+		<h3>Architecture</h3>
+	</header>
+	<article>
+		<p>
+			While working here at Hostbaby, I've had the great opportunity to gain insight as to how applications work in the 'real world'.
+			The real world brings with it a lot of opportunity for growth and problem solving. I would often notice, as primarily a front-end developer,
+			how advanced application architecture was almost always isolated to the application's back end. While of course it warrants it,
+			I wondered why the client side of things were so often neglected when architecting came into play. Using an MVC framework, Javascript has a tendency
+			to be cast anywhere that is convenient at the time of coding. Nothing is worse than coming onto a project halfway through to find code so horrendously
+			unorganized that you actually tell your development manager you are considering re-writing it.
+
+			Most MVC frameworks have some sort of file system parsing mechanism so that, even by eyeballing it, you can tell what view files go to what controller, etc.
+			So the thought came to one day - why not do something similar with our application's Javascript? From that, the design pattern of JSMVC was born.
+
+			The general idea is one JS object to every Controller. The JS object would then contain nested objects that would pertain to each view action in the
+			controller. Like shown:
+		</p>
+		<p class="code-tree">
+
+			 -Uber Controller<br />
+			 --oneAction()<br />
+			 --twoAction()<br />
+			 --threeAction()<br />
+			<br />
+			<br />
+			-Uber.js<br />
+			--Uber.prototype = {}<br />
+			--- _one: {}<br />
+			--- _two: {}<br />
+			--- _three: {}<br />
+
+		</p>
+		<p>
+			As you can see, there is almost a one to one relation ship between controller and js object. The second step to this, was to build an autoloader
+			that would load the appropriate js code based on what view action was being loaded by the server.
+		</p>
+
+		<p>The JS:</p>
+		<pre>
+			<code class="prettyprint">
+			var Autoloader = function() {
+
+				this.uri = window.location.pathname;
+
+				//View object - if ever you add a new view, please create a property for it here.
+				// These get cycled through the view-object-loader so they need to be kept current
+				// for any page to actually get js loaded with it.
+				this.views = {
+					_one: '/loader/one',
+					_two: '/loader/two',
+					_three: 'loader/three'
+				};
+
+				//Load objects
+				this.objectLoader();
+
+				//Global init - ran no matter what.
+				this.init();
+
+			}//End constructor
+			</code>
+		</pre>
+		<p>So in the constructor you build an object that holds values for each URI segment.</p>
+		<pre>
+			<code class="prettyprint">
+			/**
+			*  OBJECT LOADER
+			*
+			*  @desc: This loads the appropriate object methods based on what view is being loaded.
+			*
+			*  @use:  To use the Object Loader:
+			*  				1: Add the key val pair the in Constructor's views object.
+			*  				2: actually create the object in Object.prototype as shown below:
+			*  						Object.prototype
+			*  					 		->_view-name
+			*  					 			->init: {}
+			*/
+			Autoloader.prototype.objectLoader = function() {
+				var self = this;
+
+				//Iterate through the view object properties and search the pathname to see if it contains it.
+				//doing it this way will cause every view to load _one as well as its own view-object code.
+				//This kind of creates a cool inheritance model - however this might complicate things if you want to have
+				//_one specific code - though it's more than solvable with more granular pathname manipulation.
+				for (var prop in self.views) {
+					if((self.uri.search(self.views[prop])) > -1) {
+						self[prop].init(self);//Pass in Contacts as an object.
+					}
+				}
+			}//End Object Loader
+			</code>
+		</pre>
+		<p>You can see by the doc block in the code as to what this accomplishes. The main benefit of this architecture is:
+			<ol>
+				<li>Organized file structure for your javascript makes development way more reliable.</li>
+				<li>It creates a happy medium between client and server side performance - by requiring fewer files to server while also only loading the javascript
+				that the browser will actually need.</li>
+			</ol>
+		</p>
+		<p>If none of that made any sense, don't worry! Hit me up and I'll chat your ear off about it at any time :)</p>
+	</article>
+</section>
+

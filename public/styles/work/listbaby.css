@@ -1,10 +1,10 @@
 /**********************************************************************************************************************************************************
  * IMPORTED STYLES																																																																        *
  *********************************************************************************************************************************************************/
-
-    /**********************************************************************************************************************************************************
-    * FONT KITS																																																														                  *
-    *********************************************************************************************************************************************************/
+@import '../../utils/hljs/styles/zenburn.css;
+/**********************************************************************************************************************************************************
+ * FONT KITS																																																														                  *
+ *********************************************************************************************************************************************************/
 
 
 /**********************************************************************************************************************************************************
@@ -14,15 +14,175 @@
 /**********************************************************************************************************************************************************
  * HEADER/NAVIGATION        																																																															*
  *********************************************************************************************************************************************************/
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details header {
+    margin: 10px 10px;
+    padding: 0
+}
 
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details header img{
+    position: relative;
+    top: -40px;
+    left:78%;
+}
 /**********************************************************************************************************************************************************
  * CONTENT       																																																															            *
  *********************************************************************************************************************************************************/
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section {
+    margin: 2%;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article {
+    margin: 2%;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article img{
+    margin: 1% 21.5%;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article iframe{
+    margin: 1% 23.5%;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details .status .status-header .status-value {
+    color:#ff92c9;
+    font-style: italic;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article pre {
+    margin:0;
+    padding:0;
+    background: #666;
+    border-radius: 6px;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article pre code {
+    width:800px;
+    font-size: 14px;
+    position: relative;
+    top:0;
+    left:-140px;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details section article ol {
+    margin:4%;
+}
 
 /**********************************************************************************************************************************************************
- * FOOTER      																																																															            *
+ * FORM   																																																															            *
  *********************************************************************************************************************************************************/
+div#advanced_search_section {
+    width:800px;
+    margin: 0 0 0 12%;
+    padding:2%;
+    background: #fff;
+    border-radius: 6px;
+    color:black;
+}
 
-/**********************************************************************************************************************************************************
- *     																																																															            *
- *********************************************************************************************************************************************************/
+#contact_search {
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+#contact_search input {
+    float: none;
+    vertical-align: top;
+}
+
+input.search {
+    width: 145px;
+}
+
+div.lb_section_utility h4 {
+    text-align: center;
+    display: block;
+    margin: 10px auto 10px auto;
+    font-size: .9em;
+}
+
+a.advanced_search {
+    text-align: center;
+    margin:  5px auto 0 auto;
+    width:160px;
+    color: #49afcb;
+    text-decoration: none;
+    font-size: 11px;
+    display: block;
+}
+
+a.clear_advanced_search {
+    text-align: center;
+    display: block;
+    width:70px;
+    font-size: 13px;
+    font-weight: lighter;
+    padding:0;
+    margin:0 auto 0 auto;
+}
+
+form#advanced_search_form {
+    text-align: center;
+}
+
+form#advanced_search_form ul{
+    margin: 20px auto 20px auto;
+}
+
+form#advanced_search_form ul li {
+    display:inline;
+    list-style-type: none;
+    font-size: 12px;
+}
+
+form#advanced_search_form ul li input{
+    float:none;
+    margin: 0 5px;
+}
+
+form#advanced_search_form ul li input.search {
+    width:250px;
+}
+
+form#advanced_search_form input.advanced_search_submit {
+    text-align: center;
+    margin: 15px auto 5px auto;
+}
+
+ul#search_filter_links  {
+    text-align: center;
+    margin: 0 auto;
+}
+
+ul#search_filter_links li {
+    display: inline;
+}
+
+input[type="checkbox"] {
+    border: none !important;
+}
+
+select {
+    -webkit-transition: all 0s ease;;
+    -moz-transition: all 0s ease;;
+    -o-transition: all 0s ease;;
+    transition: all 0s ease;;
+}
+
+.lb_form input {
+    border: 1px solid #cbcf2b;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+a.button.disabled,
+.lb_form input[type="submit"].disabled,
+.contact_list input[type="submit"].disabled,
+a.button.disabled:hover,
+.lb_form input[type="submit"].disabled:hover,
+.contact_list input[type="submit"].disabled:hover {
+    background: #efbf99;
+    cursor: default;
+}
