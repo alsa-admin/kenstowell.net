@@ -1,4 +1,40 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Contact</b> and script/action name <b>index</b></p>
-</div>
+<?php $this->headLink()->appendStylesheet('/styles/contact/styles.css'); ?>
+<?php $this->headScript()->appendFile('/scripts/contact/scripts.js'); ?>
+<section id="contact-wrapper">
+	<img src="../../images/contact/contact_bg" alt="bg" id="contact_bg" />
+	<header id="contact-header">
+		<div id="logo">
+			<a href="/"><img src="../../images/general/logo.png" alt="ken stowell: visual developer" /></a>
+		</div>
+		<nav id="contact-nav" class="row">
+			<a href="/about">about</a>
+			<a href="/services">services</a>
+			<a href="/work">work</a>
+			<a href="/contact" class="current-contact">contact</a>
+		</nav>
+	</header>
+	<section id="contact-content" class="row">
+		<header>
+			<h2>Send me a message:</h2>
+		</header>
+		<article class="twelvecol">
+			<form id="contact-form" action method="post">
+				<ul>
+					<li><label for="name">Name:</label></li>
+					<li><input type="text" name="name" id="name" /></li>
+					<li><label for="email">Email:</label></li>
+					<li><input type="email" name="email" id="email"/></li>
+					<li><label for="message" class="message-label">Message:</label></li>
+					<li><textarea rows="10" cols="39" name="message" id="message"></textarea></li>
+					<li><input type="submit" name="submit" id="submit"></li>
+				</ul>
+			</form>
+			<div id="contact-form-submitted" style="display: none;">
+				<h2>Thanks for contacting me! I'll get back to you soon!</h2>
+			</div>
+		</article>
+	</section>
+	<footer id="contact-footer">
+
+	</footer>
+</section>

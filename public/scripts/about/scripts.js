@@ -1,12 +1,3 @@
-/**
- * Created by JetBrains PhpStorm.
- * User: Ken
- * Date: 5/6/12
- * Time: 7:04 PM
- */
-
-
-
 /**********************************************************************************************************************************************************
  * GLOBAL VARS/FUNCTIONS                                                                                                                                                                                                                                                                    *
  *********************************************************************************************************************************************************/
@@ -25,12 +16,13 @@ $(document).ready(function () {
  * WINDOW LOAD                                                                                                                                                                                                                                                                              *
  *********************************************************************************************************************************************************/
 $(window).load(function () {
-
+    var abt = new About();
+    window.ABT = abt;
 });
 
 
 /**********************************************************************************************************************************************************
- * _____ Obect                                                                                                                                                                                                                                                                              *
+ * INDEX Obect                                                                                                                                                                                                                                                                              *
  **********************************************************************************************************************************************************
  *
  *
@@ -39,6 +31,53 @@ $(window).load(function () {
  *
  *
  */
+var About = function() {
+    //begin object methods
+    this.init();
+};
 
+/**
+ * INDEX OBJECT METHODS
+ */
+About.prototype = {
+    /**
+     * INIT
+     * @desc:
+     */
+    init: function() {
+
+        //bind events
+        this.bindEvents();
+
+
+        //load styles
+        this.loadStyles();
+    },
+    /**
+     * BIND EVENTS
+     * @desc: general event handler management
+     */
+    bindEvents: function() {
+
+    },
+    /**
+     * LOAD STYLES
+     * @desc: dynamically creates styling for responsive layouts
+     */
+    loadStyles: function() {
+        var self = this;
+
+        console.log(window)
+        //window dimensions holder
+        var w = {
+            h: $(window).height(),
+            w: $(window).width()
+        };
+
+        //About content styles
+        $('#about-content').height((w.h) - ($('#about-header').height() + $('#about-footer').height()));
+
+    }
+}
 /************************************************************* END ***************************************************************************************/
 

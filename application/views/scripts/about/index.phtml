@@ -1,4 +1,47 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>About</b> and script/action name <b>index</b></p>
-</div>
+<?php $this->headLink()->appendStylesheet('/styles/about/styles.css'); ?>
+<?php $this->headScript()->appendFile('/scripts/about/scripts.js'); ?>
+<section id="about-wrapper">
+	<header id="about-header">
+		<div id="logo">
+			<a href="/"><img src="../../images/general/logo.png" alt="ken stowell: visual developer" /></a>
+		</div>
+		<nav id="about-nav" class="row">
+			<a class="current-about">about</a>
+			<a href="/services">services</a>
+			<a href="/work">work</a>
+			<a href="/contact">contact</a>
+		</nav>
+	</header>
+	<section id="about-content" class="row">
+		<article class="twelvecol">
+			<p>Hi and thank you for visiting my site! Let me take a minute to tell you a little about myself.</p>
+
+			<ul>
+				<li>I’m 28.</li>
+				<li>I live in Portland, Oregon (coolest city ever).</li>
+				<li>I’m married to the hottest girl ever.</li>
+				<li>I love the internets.</li>
+			</ul>
+
+			<p>
+				That about sums it up :) I am deeply passionate about web development and intelligently contributing to it.
+				Though I embrace all aspects of web development, my true interest lies within front-end development.
+				I love writing code that has a visual implementation; that was purposed for user interaction.
+			</p>
+
+			<p>
+				Though I currently am a full-time web developer for <a href="http://www.hostbaby.com" target="_blank">Hostbaby</a>,
+				a company that provides shared hosting services primarily to those who use <a href="http://www.cdbaby.com" target="_blank">CD Baby</a> (though anyone can sign up),
+				I am always looking to level up in my skillset and experience as a web developer and am always willing to hear an
+				idea for a project or cool new service anytime.
+			</p>
+
+			<p>So feel free to take a look around and contact me if you have any questions!</p>
+
+			-Ken
+		</article>
+	</section>
+	<footer id="about-footer">
+
+	</footer>
+</section>

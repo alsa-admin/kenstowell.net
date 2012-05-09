@@ -1,20 +1,18 @@
 /**********************************************************************************************************************************************************
  * IMPORTED STYLES																																																																        *
  *********************************************************************************************************************************************************/
-@import url('1140/1140.css');
-@import url('1140/ie.css');
-@import url('1140/styles.css');
-    /**********************************************************************************************************************************************************
-    * FONT KITS																																																														                  *
-    *********************************************************************************************************************************************************/
-@import url('fonts/*/stylesheet.css');
-@import url('fonts/*/stylesheet.css');
-@import url('fonts/*/stylesheet.css');
+
+/**********************************************************************************************************************************************************
+* FONT KITS																																																														                  *
+*********************************************************************************************************************************************************/
+
 
 /**********************************************************************************************************************************************************
  * DEFAULTS/NORMALIZATIONS/BODY																																																														*
  *********************************************************************************************************************************************************/
-
+body {
+    overflow: hidden;
+}
 /**********************************************************************************************************************************************************
  * HEADER/NAVIGATION        																																																															*
  *********************************************************************************************************************************************************/
@@ -22,11 +20,119 @@
 /**********************************************************************************************************************************************************
  * CONTENT       																																																															            *
  *********************************************************************************************************************************************************/
+section#contact-wrapper {
+    margin: 0;
+    padding: 0;
+}
 
+section#contact-wrapper img#contact_bg {
+    position:absolute;
+    z-index: -99;
+}
+
+section#contact-wrapper header#contact-header {
+    height: 54px;
+    background-color: #5B544B;
+}
+section#contact-wrapper header#contact-header div#logo {
+    padding:4px 5px;
+    float:left;
+}
+
+section#contact-wrapper header#contact-header nav#contact-nav {
+    color: white;
+    font-family:sofiaprolight;
+    text-align: right;
+    padding: 31px 0 0 0;
+}
+
+section#contact-wrapper header#contact-header nav#contact-nav a {
+    display: inline-block;
+    font-size: 20px;
+}
+
+section#contact-wrapper header#contact-header nav#contact-nav a:first-child {
+    padding: 0 55px 0 0;
+}
+
+section#contact-wrapper header#contact-header nav#contact-nav a:nth-child(2) {
+    padding: 0 55px 0 0;
+}
+
+section#contact-wrapper header#contact-header nav#contact-nav a:nth-child(3) {
+    padding: 0 55px 0 0;
+}
+
+section#contact-wrapper section#contact-content {
+    color:#5B544B;
+    font-family: sofiaprolight;
+}
+
+section#contact-wrapper section#contact-content #contact-form-submitted {
+    height: 504px;
+    text-align: center;
+    color:white;
+}
+
+section#contact-wrapper section#contact-content header {
+    margin: 10% auto -10% auto;
+}
+
+section#contact-wrapper section#contact-content article {
+    margin:12% auto;
+    font-size:20px;
+    background: url('../../images/contact/form_bg.png') repeat;
+}
+
+section#contact-wrapper section#contact-content article p {
+    margin:2% auto;
+}
+
+section#contact-wrapper section#contact-content article ul{
+    margin:3% 10%;
+}
+
+section#contact-wrapper section#contact-content article ul li{
+    display: block;
+    list-style-type: none;
+    margin: 1% auto;
+}
 /**********************************************************************************************************************************************************
  * FOOTER      																																																															            *
  *********************************************************************************************************************************************************/
-
+section#contact-wrapper footer#contact-footer {
+    height:15px;
+    background-color: #48555B;
+}
 /**********************************************************************************************************************************************************
- *     																																																															            *
+ * FORM    																																																															            *
  *********************************************************************************************************************************************************/
+#contact-form {
+    width: 630px;
+    text-align: center;
+    margin: 2% auto;
+}
+
+#contact-form ul li {
+    display: block;
+    list-style-type: none;
+    margin: 2% auto -2% auto;
+}
+
+#contact-form ul li label {
+    color: white;
+    margin: 0 55% 0 0;
+    text-align: left;
+}
+
+#contact-form ul li .message-label {
+    margin: 0 49% 0 0;
+
+}
+
+#contact-form input[type=text],#contact-form input[type=email], #contact-form textarea {
+    width: 330px;
+    box-shadow: 0 0 16px #666;
+    border-radius: 4px;
+    margin:2% auto;
+}
