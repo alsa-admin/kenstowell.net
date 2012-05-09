@@ -1,27 +1,136 @@
 /**********************************************************************************************************************************************************
  * IMPORTED STYLES																																																																        *
  *********************************************************************************************************************************************************/
-
-/**********************************************************************************************************************************************************
- * FONT KITS																																																														                  *
- *********************************************************************************************************************************************************/
-
+@import url('hostbaby.css');
+@import url('listbaby.css');
+@import url('dev-docs.css');
+@import url('blink-budget.css');
+@import url('hostbaby.css');
 /**********************************************************************************************************************************************************
  * DEFAULTS/NORMALIZATIONS/BODY																																																														*
  *********************************************************************************************************************************************************/
-
+body {
+    overflow: hidden;
+}
 /**********************************************************************************************************************************************************
  * HEADER/NAVIGATION        																																																															*
  *********************************************************************************************************************************************************/
+section#work-wrapper header#work-header {
+    height: 54px;
+    background-color: #5B544B;
+}
+
+section#work-wrapper header#work-header div#logo {
+    padding:4px 5px;
+    float:left;
+}
+
+section#work-wrapper header#work-header nav#work-nav {
+    color: white;
+    font-family:sofiaprolight;
+    text-align: right;
+    padding: 31px 0 0 0;
+}
+
+section#work-wrapper header#work-header nav#work-nav a {
+    display: inline-block;
+    font-size: 20px;
+}
+
+section#work-wrapper header#work-header nav#work-nav a:first-child {
+    padding: 0 55px 0 0;
+}
+
+section#work-wrapper header#work-header nav#work-nav a:nth-child(2) {
+    padding: 0 55px 0 0;
+}
+
+section#work-wrapper header#work-header nav#work-nav a:nth-child(3) {
+    padding: 0 55px 0 0;
+}
 
 /**********************************************************************************************************************************************************
  * CONTENT       																																																															            *
  *********************************************************************************************************************************************************/
 
+section#work-wrapper {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section#work-wrapper img#work_bg {
+    position:absolute;
+    z-index: -99;
+}
+
+section#work-wrapper section#work-content {
+    color:white;
+    font-family: sofiaprolight;
+}
+
+section#work-wrapper section#work-content header {
+    margin: 10% auto;
+    z-index: -100;
+}
+
+section#work-wrapper section#work-content article {
+    margin:18% auto;
+    font-size:20px;
+}
+
+section#work-wrapper section#work-content article p {
+    margin:2% auto;
+}
+
+section#work-wrapper section#work-content article ul{
+    z-index: 1000;
+    padding: 1%;
+}
+
+section#work-wrapper section#work-content article ul li{
+    display: inline;
+    list-style-type: none;
+}
+
+section#work-wrapper section#work-content article ul li:nth-child(2){
+
+}
+
+section#work-wrapper section#work-content article ul li.work-item{
+    width:330px;
+    height:180px;
+    background: url('../../images/work/work_item.png') repeat;
+}
+
+section#work-wrapper section#work-content article ul li.work-item span.work-item-title{
+    padding:5px 5px;
+}
+
+section#work-wrapper section#work-content article section#work-details-wrapper div.work-details {
+    position:absolute;
+    width:1140px;
+    background: url('../../images/work/work_item.png') repeat;
+    overflow: auto;
+}
+
+div#blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .6;
+}
+
 /**********************************************************************************************************************************************************
  * FOOTER      																																																															            *
  *********************************************************************************************************************************************************/
-
+section#work-wrapper footer#work-footer {
+    height:15px;
+    background-color: #48555B;
+}
 /**********************************************************************************************************************************************************
  *     																																																															            *
  *********************************************************************************************************************************************************/

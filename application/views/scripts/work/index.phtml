@@ -1,4 +1,57 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Work</b> and script/action name <b>index</b></p>
-</div>
+<?php $this->headLink()->appendStylesheet('/styles/work/styles.css'); ?>
+<?php $this->headScript()->appendFile('/scripts/work/scripts.js'); ?>
+<section id="work-wrapper" class="container">
+	<img src="../../images/work/work_bg_1.gif" alt="bg" id="work_bg" />
+	<header id="work-header">
+		<div id="logo">
+			<a href="/"><img src="../../images/general/logo.png" alt="ken stowell: visual developer" /></a>
+		</div>
+		<nav id="work-nav" class="row">
+			<a href="/about">about</a>
+			<a href="/services">services</a>
+			<a href="/work" class="current-work">work</a>
+			<a href="/contact">contact</a>
+		</nav>
+	</header>
+	<section id="work-content" class="row">
+		<header class="twocol">What I've done<br />(What I'm Doing):</header>
+		<div id="blackout" style="display: none;"></div>
+		<article>
+			<ul class="work-list row">
+				<li id="hostbaby" class="work-item fourcol">
+					<span class="work-item-title">HostBaby:</span>
+					<img src="../../images/work/hostbaby_logo.png" alt="HostBaby" class="work-item-image" />
+				</li>
+				<li id="listbaby" class="work-item fourcol">
+					<span class="work-item-title">ListBaby:</span>
+					<img src="../../images/work/listbaby_logo.png" alt="HostBaby" class="work-item-image" />
+				</li>
+				<li id="sunny-rose" class="work-item fourcol last">
+					<span class="work-item-title">Sunny Rose Photography:</span>
+					<img src="../../images/work/hostbaby_logo.png" alt="HostBaby" class="work-item-image" />
+				</li>
+			</ul>
+			<ul class="work-list row">
+				<li id="dev-docs" class="work-item fourcol">
+					<span class="work-item-title">Dev-Docs:</span>
+					<img src="../../images/work/dev_docs_logo.png" alt="Dev-Docs" class="work-item-image" />
+				</li>
+				<li id="blink-budget" class="work-item fourcol">
+					<span class="work-item-title">Blink Budget:</span>
+					<img src="../../images/work/blink_budget_logo.png" alt="Blink Budget" class="work-item-image" />
+				</li>
+				<li id="your-project" class="work-item fourcol last">
+					<span class="work-item-title your-project">Your Project Here :)</span>
+				</li>
+			</ul>
+			<section id="work-details-wrapper">
+				<div id="" class="work-details" style="display:none;">
+
+				</div>
+			</section>
+		</article>
+	</section>
+	<footer id="work-footer">
+
+	</footer>
+</section>

@@ -49,6 +49,7 @@ Index.prototype = {
         //bind events
         this.bindEvents();
 
+
         //load styles
         this.loadStyles();
     },
@@ -60,13 +61,13 @@ Index.prototype = {
         var self = this;
         //used for offset increment
         var offY = -($(window).height());
-      //Trigger for the footer elevation
-        $('div#page-wrapper').live('mousemove', function(e) {
-            if(offY < 0) {
-                offY+=(1.5);
-                self.elevateFooter(e, offY);
-            }
-        });
+            //Trigger for the footer elevation
+            $('div#page-wrapper').live('mousemove', function(e) {
+                if(offY < 0) {
+                    offY+=(1.5);
+                    self.elevateFooter(e, offY);
+                }
+            });
     },
     /**
      * LOAD STYLES
