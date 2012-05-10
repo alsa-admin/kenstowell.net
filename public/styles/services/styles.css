@@ -61,7 +61,7 @@ section#services-wrapper section#services-content {
 }
 
 section#services-wrapper section#services-content header {
-    margin: 10% auto;
+    margin: 10% auto 0 auto;
     z-index: -100;
 }
 
