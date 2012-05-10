@@ -72,9 +72,17 @@ Contact.prototype = {
                     message: $('textarea').val()
                 },
                 dataType: 'json',
+								error: function(xhr) {
+									console.log(xhr)
+								},
                 success: function(data) {
+									console.log(data);
                     $('#contact-form').fadeOut(600, function() {
-                       $('#contact-form-submitted').fadeIn(400);
+											$('#contact-form-submitted h2').css({'margin-top' : '20%' })
+                       $('#contact-form-submitted').fadeIn(400, function() {
+
+											 });
+
                     });
                 }
             });

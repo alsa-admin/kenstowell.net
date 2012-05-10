@@ -65,11 +65,11 @@ Services.prototype = {
         $('.service-item').live('mouseenter', function(e) {
             var base = this;
             if($(this).is('.active') == false) {
-                $(this).css({
-                    'cursor'  : 'pointer',
-                    'width' :     '355px',
-                    'height': '195px'
-                });
+							$(this).stop().animate({
+								'top' : '+10px'
+							}, 400).css({
+									'cursor': 'pointer'
+								})
             }
             if($('.active').length == 0) {
                 timer = setTimeout(function() {
@@ -80,11 +80,11 @@ Services.prototype = {
         ).live('mouseleave', function(e) {
             clearTimeout(timer);
                 if($(this).is('.active') == false) {
-                    $(this).css({
-                        'cursor'  : 'default',
-                        'width' :     '350px',
-                        'height': '190px'
-                    });
+                    $(this).stop().animate({
+											'top' : '0'
+										},200).css({
+												'cursor': 'default'
+											})
                 }
           }
         ).live('click', function(e) {
@@ -125,6 +125,9 @@ Services.prototype = {
             'height': w.h
         });
 
+				$('section#services-wrapper section#services-content article ul#services-list').css({
+					//'margin-left' : (w.w - $('section#services-wrapper section#services-content article ul#services-list').width())/2
+				});
         //black out
         $('#blackout').css({
             'width' : w.w,
@@ -145,7 +148,7 @@ Services.prototype = {
                         $(elem).children(':not(span)').hide();
                         $(elem).stop().animate({
                             'width' : '1140px',
-                            'height': '504px'
+                            'height': '83%'
                         }, 1200, function() {
                             $('#blackout').fadeIn(600);
                             $(elem).addClass('active');
@@ -158,9 +161,9 @@ Services.prototype = {
                     setTimeout( function() {
                         $(elem).children(':not(span)').hide();
                         $(elem).stop().animate({
-                            'left'  : '330px',
+                            'left'  : '0',
                             'width' : '1140px',
-                            'height': '504px'
+                            'height': '83%'
                         }, 1000, function() {
                             $('#blackout').fadeIn(600);
                             $(elem).addClass('active');
@@ -173,10 +176,14 @@ Services.prototype = {
                     setTimeout( function() {
                         $(elem).children(':not(span)').hide();
                         $(elem).stop().animate({
-                            'left'  : '360px',
+                            'left'  : '0',
                             'width' : '1140px',
-                            'height': '504px'
+                            'height': '83%'
                         }, 1200, function() {
+														$('span.consulting-title').css({
+															'margin-right' : '10px'
+														});
+
                             $('#blackout').fadeIn(600);
                             $(elem).addClass('active');
                             $('#consulting-content').fadeIn(600);
@@ -214,7 +221,7 @@ Services.prototype = {
                 if($(itm).is('#design')) {
                     $(itm).children('div').fadeOut(400);
                     $(itm).animate({
-                        'left'  : '740px',
+                        'left'  : '30px',
                         'width' : '350px',
                         'height': '190px'
                     }, 1000, function() {
@@ -227,7 +234,7 @@ Services.prototype = {
                 if($(itm).is('#consulting')) {
                     $(itm).children('div').fadeOut(400);
                     $(itm).animate({
-                        'left'  : '1180px',
+												'left' : '60px',
                         'width' : '350px',
                         'height': '190px'
                     }, 1200, function() {

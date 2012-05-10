@@ -110,8 +110,9 @@ section#about-wrapper section#about-content header {
 }
 
 section#about-wrapper section#about-content article {
-     margin:12% auto;
-     font-size:20px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:20px;
 }
 
 section#about-wrapper section#about-content article p {

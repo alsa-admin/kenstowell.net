@@ -76,6 +76,9 @@ About.prototype = {
 
         //About content styles
         $('#about-content').height((w.h) - ($('#about-header').height() + $('#about-footer').height()));
+				$('section#about-wrapper section#about-content article').css({
+					'margin-top' :($('#about-content').height() - $('section#about-wrapper section#about-content article').height()) /2
+				});
 
     }
 }

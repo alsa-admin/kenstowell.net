@@ -64,8 +64,31 @@ Index.prototype = {
             //Trigger for the footer elevation
             $('div#page-wrapper').live('mousemove', function(e) {
                 if(offY < 0) {
-                    offY+=(2.5);
-                    self.elevateFooter(e, offY);
+
+									if(offY <= (-$(window).height())) {
+										offY+=(1.5);
+										self.elevateFooter(offY);
+										console.log('1')
+									} else if(offY < (-$(window).height() /1.2) && (offY > (-$(window).height()))) {
+										offY+=(2.5);
+										self.elevateFooter(offY);
+										console.log('2')
+									} else if (offY < (-$(window).height() / 3) && (offY > (-$(window).height())/ 1.2)) {
+										offY+=(14.5);
+										self.elevateFooter(offY);
+										console.log('3')
+									}
+									else if (offY < (-$(window).height() / 5) && (offY > (-$(window).height())/ 3)) {
+										offY+=(30);
+										self.elevateFooter(offY);
+										console.log('5')
+									} else {
+										var diff = 0 - -offY;
+
+										offY+=(diff *-1);
+										self.elevateFooter(offY);
+										console.log('5', diff)
+									}
                 }
             });
     },
@@ -91,13 +114,15 @@ Index.prototype = {
         $('#intro-content-lower').css('bottom', -((w.h)));
         //About content styles
         $('#about-content').height((w.h) - ($('#about-header').height() + $('#about-footer').height()));
-
+				$('section#about-wrapper section#about-content article').css({
+					'margin-top' :($('#about-content').height() - $('section#about-wrapper section#about-content article').height()) /2
+				});
     },
     /**
      * ELEVATE FOOTER
      * @desc: makes the footer rise in height based on mousemovement
      */
-    elevateFooter: function(e, offY) {
+    elevateFooter: function(offY) {
 
         $('div#intro-content-lower').css({
             'bottom' : offY
